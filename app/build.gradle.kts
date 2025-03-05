@@ -4,7 +4,8 @@ plugins {
 
 android {
     namespace = "com.example.wallpaper"
-    compileSdk = 34
+    compileSdk = 35
+
 
     defaultConfig {
         applicationId = "com.example.wallpaper"

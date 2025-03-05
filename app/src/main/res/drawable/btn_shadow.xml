@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Khi nhấn vào, nút sẽ sáng lên (màu trắng có độ mờ) -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#70FFFFFF"/> <!-- Màu trắng trong suốt 20% -->
+            <corners android:radius="12dp"/> <!-- Bo góc 12dp -->
+        </shape>
+    </item>
 
+    <!-- Trạng thái mặc định: nút trong suốt -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#4DFFFFFF"/> <!-- Trong suốt -->
+            <corners android:radius="12dp"/>
+        </shape>
+    </item>
 </selector>
