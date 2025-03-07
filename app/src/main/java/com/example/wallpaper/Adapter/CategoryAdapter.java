@@ -13,10 +13,10 @@ import com.example.wallpaper.model.Category;
 
 import java.util.List;
 
-public class CategoryActivity extends RecyclerView.Adapter<CategoryActivity.CategoryViewHolder> {
+public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
     private List<Category> mlistCategory;
 
-    public CategoryActivity(List<Category> mlistCategory) {
+    public CategoryAdapter(List<Category> mlistCategory) {
         this.mlistCategory = mlistCategory;
     }
 

@@ -2,22 +2,15 @@ package com.example.wallpaper;
 
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-public class NavmenuActivity extends AppCompatActivity {
+public class SettingActivity extends AppCompatActivity {
 
     private ImageView back;
     private RelativeLayout language, rate, share, feedback, info, privacy;
@@ -26,7 +19,7 @@ public class NavmenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_setting);
         back = findViewById(R.id.back);
 
         initView();
@@ -63,7 +56,7 @@ public class NavmenuActivity extends AppCompatActivity {
     private void share() {
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "share content with ");
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "download Wallpaper ");
         sendIntent.setType("text/plain");
 
         Intent shareIntent = Intent.createChooser(sendIntent, null);

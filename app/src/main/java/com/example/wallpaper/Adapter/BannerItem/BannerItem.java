@@ -1,4 +1,7 @@
 package com.example.wallpaper.Adapter.BannerItem;
 
-public class BannerItem {
+import com.example.wallpaper.model.User;
+
+public class BannerItem  {
+
 }

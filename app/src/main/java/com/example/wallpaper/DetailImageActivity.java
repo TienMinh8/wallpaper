@@ -1,6 +1,7 @@
 package com.example.wallpaper;
 
 import android.annotation.SuppressLint;
+import android.app.WallpaperColors;
 import android.app.WallpaperManager;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -55,7 +56,7 @@ public class DetailImageActivity extends AppCompatActivity {
         btn_srceen.setOnClickListener(v -> setWallpaper(WallpaperManager.FLAG_LOCK));
     }
 
-    private void setWallpaper(int flag) {
+    private void setWallpaper(int flag){
         Glide.with(this)
                 .asBitmap()
                 .load(imageUrl)
@@ -63,15 +64,14 @@ public class DetailImageActivity extends AppCompatActivity {
                     @Override
                     public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
                         WallpaperManager wallpaperManager = WallpaperManager.getInstance(DetailImageActivity.this);
-                        try {
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                                wallpaperManager.setBitmap(resource, null, true, flag);
-                            } else {
-                                wallpaperManager.setBitmap(resource); // Android cũ chỉ hỗ trợ màn hình chính
+                        try{
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+                                wallpaperManager.setBitmap(resource,null,true,flag);
+                            }else {
+                                wallpaperManager.setBitmap(resource);
                             }
-
                             String message = (flag == WallpaperManager.FLAG_LOCK) ?
-                                    "Cài đặt màn hình khóa thành công!" : "Cài đặt màn hình chính thành công!";
+                                "cài đặt màn hình khóa thành công!" : "cài đặt màn hình chính thành công!";
                             Toast.makeText(DetailImageActivity.this, message, Toast.LENGTH_SHORT).show();
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -81,7 +81,7 @@ public class DetailImageActivity extends AppCompatActivity {
 
                     @Override
                     public void onLoadCleared(@Nullable Drawable placeholder) {
-                        // Không cần xử lý
+
                     }
                 });
     }
